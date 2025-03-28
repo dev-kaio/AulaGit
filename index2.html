@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+
+<body>
+    <ul id="lista"></ul>
+    <input type="text" placeholder="Item que adicionará" id="item">
+    <button onclick="adicionar()">Adicionar Item</button>
+    <button onclick="remover()">Remover Item</button>
+    <script>
+        function adicionar() {
+            var lista = document.getElementById("lista");
+            const item = document.getElementById("item").value.trim();
+            if (item) {
+                var novoItem = document.createElement("li");
+                novoItem.textContent = item;
+                lista.appendChild(novoItem);
+                document.getElementById("item").value = "";
+            }
+        }
+
+        function remover() {
+            const item = document.getElementById("item").value.trim();
+            const lista = document.getElementById("lista");
+            const itens = lista.getElementsByTagName("li");
+            for (let i = 0; i < itens.length; i++) {
+                if (itens[i].textContent === item) {
+                    lista.removeChild(itens[i]);
+                    document.getElementById("item").value = "";
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

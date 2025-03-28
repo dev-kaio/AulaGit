@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+
+<body>
+    <div style="display: flex; text-align: center; justify-content: center; align-items: center;">
+        <button type="button" onclick="exibir()">Exibir Data e Hora Atual</button>
+        <br>
+        <div id="datahora" style="margin:5%;"></div>
+    </div>
+    <script>
+        function exibir() {
+            const data = new Date;
+            const dia = String(data.getDate()).padStart(2, '0');
+            const mes = String(data.getMonth() + 1).padStart(2, '0');
+            const ano = data.getFullYear();
+            const hora = String(data.getHours()).padStart(2, '0');
+            const minuto = String(data.getMinutes()).padStart(2, '0');
+            const segundo = String(data.getSeconds()).padStart(2, '0');
+
+            const dataFormatada = `${dia}/${mes}/${ano} ${hora}:${minuto}:${segundo}`;
+            const exibicao = document.getElementById("datahora");
+            exibicao.textContent = dataFormatada;
+        }
+    </script>
+</body>
+
+</html>

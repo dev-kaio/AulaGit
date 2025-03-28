@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Atividades 1 e 4</title>
+</head>
+
+<body>
+    <p id="paragrafo">Serei alterado</p>
+    <button type="button" onclick="alterar()">Alterar</button>
+    <script src="script.js">
+        let i = 1;
+        function alterar() {
+            let paragrafo = document.getElementById("paragrafo");
+            paragrafo.innerHTML = `Fui alterado ${i++} vezes`;
+        }
+    </script>
+</body>
+
+</html>

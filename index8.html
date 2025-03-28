@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+</head>
+
+<body>
+    <ul id="lista">
+        <li>Maçã</li>
+        <li>Banana</li>
+        <li>Kiwi</li>
+        <li>Pera</li>
+        <li>Mamão</li>
+    </ul>
+    <button type="button" onclick="crescente()">Ordenar Crescente</button>
+    <button type="button" onclick="decrescente()">Ordenar Decrescente</button>
+
+    <script>
+        var lista = document.querySelectorAll("#lista li");
+        lista = Array.from(lista);
+
+        function crescente() {
+            lista.sort((a, b) => a.textContent.localeCompare(b.textContent));
+            let ul = document.getElementById('lista');
+            ul.innerHTML = '';
+
+            lista.forEach(item => {
+                ul.appendChild(item);
+            });
+        }
+
+        function decrescente() {
+            lista.sort((a, b) => b.textContent.localeCompare(a.textContent));
+            let ul = document.getElementById('lista');
+
+            ul.innerHTML = '';
+            lista.forEach(item => {
+                ul.appendChild(item);
+            });
+        }
+    </script>
+</body>
+
+</html>

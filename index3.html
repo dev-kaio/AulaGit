@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+
+<body>
+    <p id="estilo">Texto para estilizar</p>
+    <button onclick="estilizar()">Estilizar</button>
+    <script>
+        function estilizar() {
+            const texto = document.getElementById("estilo");
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            let rgb = `rgb(${r}, ${g}, ${b})`;
+            texto.style.color = rgb;
+        }
+    </script>
+</body>
+
+</html>

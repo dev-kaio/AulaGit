@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+
+<body>
+    <button onclick="imagem()">Alterar visibilidade da imagem</button>
+    <img src="ramon.jpg" alt="ramon" style="display: none;" id="ramon">
+    <script>
+        function imagem() {
+            const img = document.getElementById("ramon");
+            if (img.style.display == "none") {
+                img.style.display = "block";
+            }
+            else {
+                img.style.display = "none";
+            }
+            img.addEventListener("mouseover", function () {
+                if (img.src.includes("ramon.jpg")) {
+                    img.src = "gorila.jpg";
+                }
+                img.addEventListener("mouseout", function () {
+                    if (img.src.includes("gorila.jpg")) {
+                        img.src = "ramon.jpg";
+                    }
+                })
+            });
+        }
+    </script>
+</body>
+
+</html>

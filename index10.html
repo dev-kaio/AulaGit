@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+    <style>
+        .barra {
+            width: 300px;
+            height: 20px;
+            border-radius: 15px;
+            background-color: #000000;
+        }
+
+        .barra div {
+            height: 100%;
+            border-radius: 15px;
+            background-color: aquamarine;
+            width: 0%;
+            transition: width 0.1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <span class="porcentagem"></span>
+        <div class="barra">
+            <div></div>
+        </div>
+        <button style="margin-top: 2%;" type="button" onclick="carregar()">Carregar</button>
+    </section>
+    <script>
+        const progresso = document.querySelector(".barra div")
+        function carregar() {
+            let i = 0;
+            const intervalo = setInterval(() => {
+                if (i >= 100) {
+                    clearInterval(intervalo);
+                }
+                progresso.style.width = i + "%";
+                i++;
+            }, 50);
+        }
+    </script>
+</body>
+
+</html>

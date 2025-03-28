@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+</head>
+
+<body>
+    <form>
+        <label>Informe seu nome:</label>
+        <input type="text" id="nome">
+        <button onclick="validacao()" type="button">Enviar</button>
+    </form>
+    <div id="resp"></div>
+    <script>
+        function validacao() {
+            const nome = document.getElementById("nome").value.trim();
+            const resp = document.getElementById("resp");
+            if (nome == "") {
+                resp.textContent = "Preencha o campo";
+                setTimeout(() => {
+                    resp.textContent = "";
+                }, "1000");
+            } else {
+                resp.textContent = "Submetido com sucesso";
+                setTimeout(() => {
+                    resp.textContent = "";
+                    window.location.reload();
+                }, "1000");
+            }
+        }
+    </script>
+</body>
+
+</html>
